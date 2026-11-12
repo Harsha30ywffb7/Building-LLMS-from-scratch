@@ -1,0 +1,4 @@
+- install python
+- install uv for better package management
+- install required packages intially like jupyterlab and torch
+- start jupyter lab , uv run jupyter lab
