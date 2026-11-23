@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import tiktoken
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_in, d_out, context_length, dropout,num_heads, qkv_bias=False):
         super().__init__()
@@ -60,4 +61,16 @@ class MultiHeadAttention(nn.Module):
         context_vec = self.out_proj(context_vec)
 
         return context_vec
+
+
+class Tokenizer:
+    def __init__(self, text):
+        super().__init__()
+        self.tokenizer = tiktoken.get_encoding("gpt2")
+
+    def encode(self, text):
+        tokens = self.tokenizer.encode(text)
+        return tokens
         
+
+   
