@@ -1,0 +1,20 @@
+
+
+1. Self attention mechanism explained in a better way:
+
+https://dev.to/lewis_won/creating-the-self-attention-mechanism-from-scratch-3769
+
+
+2. Tiktoken code repo:
+
+https://github.com/openai/tiktoken
+
+3. Data set for the training
+
+Interested readers can also use the supplementary code for this book
+to prepare a larger-scale dataset consisting of more than 60,000 public domain
+books from Project Gutenberg and train an LLM on these (see appendix D
+for details).
+
+4. NOTE Interested readers can learn about more advanced techniques, including learning rate warmup, cosine annealing, and gradient clipping, in appendix D.
+

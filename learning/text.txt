@@ -1,0 +1,32 @@
+Flow how it is going:
+
+1. created a gpt model placeholder where layernorm and transformer blocks are dummy.
+
+2. layernorm:  it is the layer normalisation by finding the mean and variance of each layer, by adding scale and shift to improve the model performance while training.
+
+3. Feed forward module - In the feedforward layer, inputs and gelu outputs are involved. inputs splitted to multiple dimensions to expore more features or properties to understand much complex patterns. inputs splitted to mulitple outputs, those outputs again bring down to  same input dimensions in the output layer.
+
+4. shortcut - understood concept clearly it is for, preventing the vanishing gradients across the layers while backpropagation.
+
+5. Final norm layer and in the output layer where the resultant weights are mapped to entire vocabulary. to generate the next possible text output.
+
+
+# nn.linear for new layer creation for neural net layers
+# nn.sequential to combine multiple blocks are layers.
+# nn.Embedding to get a embeddings array or block for some tokens.
+# positional embeddings are added with the tokens to find the order/sequence of tokens to process and establish relationships.
+
+
+
+---------------------------- Chapter- 5 - pretraining -----------------
+
+1. initially we need to generate the text.
+
+2. text evalution - how well the model is giving the outputs. and compare it with the target and find the loss, here it is found by the cross_entropy. logits are most important here, compare it with the targets. 
+
+3. training and validation losses - Apply the loss to the entire dataset, which we split into a training and validation portion.
+here i need to apply that loss to the entire dataset, so i need again those concepts of the dataset and dataloaders. we gets the total training and validation losses.
+
+those above 3 comes under the text evalution.
+
+4. now training llms to decrease the loss to zero.
