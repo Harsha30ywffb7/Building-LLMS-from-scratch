@@ -30,3 +30,36 @@ here i need to apply that loss to the entire dataset, so i need again those conc
 those above 3 comes under the text evalution.
 
 4. now training llms to decrease the loss to zero.
+
+5. while evalution, try to disable the grads and dropouts using with torch.no_grad(), model.eval()
+
+optimizer.zero_grad() - Clear previous gradients
+- A gradient tells us how changing a model parameter affects the loss (prediction error).
+- PyTorch accumulates gradients by default.
+- This means that if you calculate gradients multiple times, PyTorch adds them together instead of replacing the old gradients.
+
+model.eval()
+
+model.train() - during training model dropouts are activated , to avoid memorizing the important patterns.
+- model.train() does not actually train the model by itself. It only changes its mode.
+
+
+optimizer.step()
+- The optimizer uses this gradient to update the weight.
+- stochastic gradient descent.
+- wnew​=wold​−α×gradient
+ alpha is the learning rate.
+new words for me.
+
+
+A weight determines how strongly one input influences a neuron's output.
+A gradient tells us how much the loss changes when a particular weight changes.
+
+
+6. Adam W, optimizer using in the neural networks for training. . However, in
+our training loop, we opt for the AdamW optimizer. AdamW is a variant of Adam that
+improves the weight decay approach, which aims to minimize model complexity and
+prevent overfitting by penalizing larger weights. This adjustment allows AdamW to
+achieve more effective regularization and better generalization; thus, AdamW is frequently used in the training of LLMs.
+
+7. As mentioned earlier, interested readers can try to train the model on 60,000 public domain books from Project Gutenberg, where this overfitting does not occur; see appendix B for details. 
